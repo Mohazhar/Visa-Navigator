@@ -1,0 +1,42 @@
+/* 1. REQUIRED: Add these three lines at the very top */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif; /* Added sans-serif as fallback */
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+/* 2. Custom @layer must come AFTER @tailwind directives */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: #1B2A4E; /* Deep Midnight Blue */
+    
+    --primary: #C5A059;    /* Champagne Gold */
+    --primary-foreground: #FFFFFF;
+
+    --muted: #5D7293;      /* Steel Blue / Slate */
+    --muted-foreground: #5D7293;
+
+    --accent: #8E6D3B;     /* Bronze / Dark Gold */
+  }
+
+  h1, h2, h3 {
+    /* Ensure these 'brand-' classes are defined in tailwind.config.js */
+    @apply text-brand-midnight font-bold;
+  }
+
+  p {
+    @apply text-brand-slate;
+  }
+}
